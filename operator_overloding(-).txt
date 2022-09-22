@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+class comlex
+{
+    int x,y;
+public:
+  void get(int a,int b)
+  {
+      x=a;y=b;
+  }
+  void set()
+  {
+      int a,b;
+      cout<<"enter input"<<endl;
+      cin>>a>>b;
+      get(a,b);
+  }
+
+  void display()
+  {
+      cout<<x<<" "<<y<<endl;
+   // cout<<y;
+  }
+
+  comlex operator -(comlex obj)
+  {
+      comlex temp;
+      temp.x=x-obj.x;
+      temp.y=y-obj.y;
+      return temp;
+  }
+
+
+};
+
+int main()
+{
+    comlex c1,c2,c3;
+    c1.set();
+    c2.set();
+    c3=c1-c2;//c1.operator(c2);
+    c3.display();
+}
